@@ -1,0 +1,20 @@
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.header__figure__img img {
+  cursor: pointer;
+  height: 3.5rem;
+  object-fit: cover;
+  width: 3.5rem;
+}
+
+.header__icon {
+  color: #00c9ff;
+  cursor: pointer;
+  font-size: 2rem;
+}

@@ -1,5 +1,13 @@
+import { Header } from "./modules/header/Header";
+import { Main } from "./modules/main/Main";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  );
 };
 
 export default App;
