@@ -1,10 +1,12 @@
 import { socialNetworksMain } from "../../helpers";
+import { Header } from "../header/Header";
 
 import styles from "./main.module.css";
 
 export const Main = () => {
   return (
     <main className={styles.main__container}>
+      <Header />
       <div className={styles.main__content}>
         <section className={styles.main__title_welcome}>
           <p className={styles.main__title1}>
@@ -19,19 +21,19 @@ export const Main = () => {
             <p>Contactame a traves de</p>
             <p>martinsimarra4@gmail.com - 3006830624</p>
           </div>
-        </section>
 
-        <section className={styles.main__info_social_network}>
-          {socialNetworksMain.map(({ icon: Icon, linkTo, title }) => (
-            <a
-              className={styles.main__item_social}
-              href={linkTo}
-              key={title}
-              target="_blank"
-            >
-              <Icon />
-            </a>
-          ))}
+          <div className={styles.main__info_social_network}>
+            {socialNetworksMain.map(({ icon: Icon, linkTo, title }) => (
+              <a
+                className={styles.main__item_social}
+                href={linkTo}
+                key={title}
+                target="_blank"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </section>
       </div>
     </main>

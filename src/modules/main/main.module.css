@@ -1,3 +1,10 @@
+.main__container {
+  display: grid;
+  grid-template-rows: 0fr 1fr;
+  height: 100vh;
+  width: 100%;
+}
+
 .main__container::before {
   background: #000000;
   content: "";
@@ -9,8 +16,14 @@
   z-index: -1;
 }
 
+.main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .main__title_welcome {
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 .main__title1 {
@@ -36,23 +49,24 @@
 }
 
 .main__contact_me {
-  padding: 1rem;
   color: #fff;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .main__line_gradient {
   background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
   border-radius: 0.1rem;
-  height: 4.5rem;
-  width: 0.4rem;
+  height: 0.5rem;
+  width: 100%;
 }
 
 .main__info_contact {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 0.3rem;
 }
 
 .main__info_contact > p {
@@ -60,9 +74,9 @@
 }
 
 .main__info_social_network {
-  padding: 0 1rem;
   display: flex;
   gap: 1.5rem;
+  padding: 0 1rem 0.9rem;
 }
 
 .main__item_social:nth-child(1) > svg {

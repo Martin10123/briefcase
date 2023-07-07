@@ -1,11 +1,9 @@
-import { Header } from "./modules/header/Header";
-import { Main } from "./modules/main/Main";
+import { AboutMePage } from "./modules";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Main />
+      <AboutMePage />
     </>
   );
 };
