@@ -1,0 +1,164 @@
+.skills__container {
+}
+
+.skills__container::before {
+  background: #000000;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.skills__content {
+}
+
+.skills__nav {
+  align-items: center;
+  border-bottom: 1px solid #92fe9d82;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.skills__nav > svg {
+  color: #00c9ff;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.skills__nav_back {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.skills__nav_back > svg {
+  cursor: pointer;
+  fill: #92fe9d;
+  font-size: 2rem;
+}
+
+.skills__nav_back > p {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+}
+
+.skills__content_info {
+}
+
+.skills__title {
+  background: linear-gradient(187deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  padding: 1rem;
+}
+
+.skills__description {
+  background: linear-gradient(293deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+}
+
+.skills__list_skills {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.8rem;
+}
+
+.skills__item {
+  align-items: center;
+  background: linear-gradient(307deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.skills__item_back > svg {
+  color: #111219;
+  font-size: 6rem;
+  position: absolute;
+  z-index: -1;
+}
+
+.skills__item_back > p {
+  color: #111219;
+  font-size: 2rem;
+  position: absolute;
+  z-index: -1;
+}
+
+.skills__item_back:nth-child(1) > svg {
+  right: 8%;
+  top: 2%;
+}
+
+.skills__item_back:nth-child(2) > svg {
+  left: 8%;
+  top: 25%;
+}
+
+.skills__item_back:nth-child(3) > svg {
+  top: 50%;
+  right: 8%;
+}
+
+.skills__item_back:nth-child(4) > svg {
+  bottom: 10%;
+  left: 8%;
+}
+
+.skills__item_back:nth-child(1) > p {
+  right: 11%;
+  top: 37%;
+  transform: rotate(45deg);
+}
+
+.skills__item_back:nth-child(2) > p {
+  left: 23%;
+  top: 12%;
+  transform: rotate(342deg);
+}
+
+.skills__item_back:nth-child(3) > p {
+  left: 6%;
+  top: 56%;
+  transform: rotate(310deg);
+}
+
+.skills__item_back:nth-child(4) > p {
+  bottom: 11%;
+  right: 1%;
+  transform: rotate(64deg);
+}
+
+.skills__color_letters {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 3s ease-in all;
+}
+
+.skills__color_images1 {
+  color: #00c9ff !important;
+  transition: 3s ease-in all;
+}
+
+.skills__color_images2 {
+  color: #92fe9d !important;
+  transition: 3s ease-in all;
+}

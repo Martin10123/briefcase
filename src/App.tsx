@@ -1,9 +1,9 @@
-import { AboutMePage } from "./modules";
+import { SkillsPage } from "./modules";
 
 const App = () => {
   return (
     <>
-      <AboutMePage />
+      <SkillsPage />
     </>
   );
 };
