@@ -1,31 +1,30 @@
 import { useState } from "react";
-import {
-  BiArrowBack,
-  BiBook,
-  BiBookOpen,
-  BiLogoTypescript,
-} from "react-icons/bi";
-import { java, javascript, react, typescript } from "../../../assets";
-import { FaJava, FaReact } from "react-icons/fa";
-import { RiJavascriptFill } from "react-icons/ri";
+import { BiArrowBack, BiBook, BiBookOpen } from "react-icons/bi";
+import { listSkills } from "../../../helpers";
+import { useReturnPage } from "../../hook/useReturnPage";
+import { motion } from "framer-motion";
 
 import styles from "./skillsPage.module.css";
 
 export const SkillsPage = () => {
   const [openHiddenLetters, setOpenHiddenLetters] = useState(false);
+  const { onReturnPage } = useReturnPage();
 
   const onHiddenLetters = () => {
     setOpenHiddenLetters(!openHiddenLetters);
   };
 
-  const hiddenLetters = openHiddenLetters ? "hidden" : "visible";
-
   return (
-    <section className={styles.skills__container}>
+    <motion.section
+      className={styles.skills__container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className={styles.skills__content}>
         <div className={styles.skills__nav}>
           <span className={styles.skills__nav_back}>
-            <BiArrowBack />
+            <BiArrowBack onClick={onReturnPage} />
             <p>Skills</p>
           </span>
 
@@ -36,18 +35,14 @@ export const SkillsPage = () => {
           )}
         </div>
 
-        <div className={styles.skills__content_info}>
-          <h1
-            className={styles.skills__title}
-            style={{ visibility: hiddenLetters }}
-          >
-            Skills
-          </h1>
+        <div
+          className={`${styles.skills__content_info} ${
+            openHiddenLetters ? styles.skills__hidden_elements : ""
+          }`}
+        >
+          <h1 className={styles.skills__title}>Skills</h1>
 
-          <div
-            className={styles.skills__description}
-            style={{ visibility: hiddenLetters }}
-          >
+          <div className={styles.skills__description}>
             <p>
               As a student, I've developed proficiency in various programming
               languages, such as React using JavaScript or TypeScript, React
@@ -60,120 +55,34 @@ export const SkillsPage = () => {
             </p>
           </div>
 
-          <ul
-            className={styles.skills__list_skills}
-            style={{ visibility: hiddenLetters }}
-          >
-            <a
-              className={styles.skills__item}
-              href="https://es.react.dev/"
-              target="_blank"
-            >
-              <img alt="React" src={react} width="20%" />
-              <p>React</p>
-            </a>
-            <a
-              className={styles.skills__item}
-              href="https://www.java.com/es/"
-              target="_blank"
-            >
-              <img alt="Java" src={java} width="20%" />
-              <p>Java</p>
-            </a>
-            <a
-              className={styles.skills__item}
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-            >
-              <img alt="Typescript" src={typescript} width="20%" />
-              <p>Typescript</p>
-            </a>
-            <a
-              className={styles.skills__item}
-              href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-              target="_blank"
-            >
-              <img alt="Javascript" src={javascript} width="20%" />
-              <p>Javascript</p>
-            </a>
+          <ul className={styles.skills__list_skills}>
+            {listSkills.map((skill) => (
+              <a
+                className={styles.skills__item}
+                href={skill.linkTo}
+                target="_blank"
+                key={skill.name}
+              >
+                <p>{skill.name}</p>
+                <img alt={skill.name} src={skill.image} />
+              </a>
+            ))}
           </ul>
+        </div>
 
-          <div className={styles.skills__back_screen}>
-            <a
-              className={styles.skills__item_back}
-              href="https://es.react.dev/"
-              target="_blank"
-            >
-              <FaReact
-                className={
-                  openHiddenLetters ? styles.skills__color_images1 : ""
-                }
-              />
+        <div className={styles.skills__back_screen}>
+          {listSkills.map(({ name, icon: Icon }) => (
+            <div className={styles.skills__item_back} key={name}>
+              <Icon />
               <p
-                className={
-                  openHiddenLetters ? styles.skills__color_letters : ""
-                }
+                style={{ visibility: openHiddenLetters ? "visible" : "hidden" }}
               >
-                React
+                {name}
               </p>
-            </a>
-            <a
-              className={styles.skills__item_back}
-              href="https://www.java.com/es/"
-              target="_blank"
-            >
-              <FaJava
-                className={
-                  openHiddenLetters ? styles.skills__color_images2 : ""
-                }
-              />
-              <p
-                className={
-                  openHiddenLetters ? styles.skills__color_letters : ""
-                }
-              >
-                Java
-              </p>
-            </a>
-            <a
-              className={styles.skills__item_back}
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-            >
-              <BiLogoTypescript
-                className={
-                  openHiddenLetters ? styles.skills__color_images1 : ""
-                }
-              />
-              <p
-                className={
-                  openHiddenLetters ? styles.skills__color_letters : ""
-                }
-              >
-                Typescript
-              </p>
-            </a>
-            <a
-              className={styles.skills__item_back}
-              href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-              target="_blank"
-            >
-              <RiJavascriptFill
-                className={
-                  openHiddenLetters ? styles.skills__color_images2 : ""
-                }
-              />
-              <p
-                className={
-                  openHiddenLetters ? styles.skills__color_letters : ""
-                }
-              >
-                Javascript
-              </p>
-            </a>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

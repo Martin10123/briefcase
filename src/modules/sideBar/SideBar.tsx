@@ -1,5 +1,6 @@
 import { logoM } from "../../assets";
 import { menuSideBar, socialNetworks } from "../../helpers";
+import { Link } from "react-router-dom";
 
 import styles from "./sideBar.module.css";
 
@@ -28,11 +29,11 @@ export const SideBar = ({ setOpenSideBar }: Props) => {
           </span>
 
           <ul className={styles.sideBar__list_options}>
-            {menuSideBar.map(({ icon: Icon, title }) => (
-              <li className={styles.sideBar__item} key={title}>
+            {menuSideBar.map(({ icon: Icon, title, linkTo }) => (
+              <Link to={linkTo} className={styles.sideBar__item} key={title}>
                 <Icon />
                 <p>{title}</p>
-              </li>
+              </Link>
             ))}
           </ul>
         </div>

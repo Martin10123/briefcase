@@ -1,6 +1,3 @@
-.skills__container {
-}
-
 .skills__container::before {
   background: #000000;
   content: "";
@@ -12,9 +9,6 @@
   z-index: -1;
 }
 
-.skills__content {
-}
-
 .skills__nav {
   align-items: center;
   border-bottom: 1px solid #92fe9d82;
@@ -23,13 +17,17 @@
   gap: 1rem;
   justify-content: space-between;
   padding: 0.8rem;
+  position: relative;
   width: 100%;
+  z-index: 99;
 }
 
 .skills__nav > svg {
   color: #00c9ff;
   cursor: pointer;
   font-size: 1.6rem;
+  position: relative;
+  z-index: 10;
 }
 
 .skills__nav_back {
@@ -51,9 +49,6 @@
   font-size: 1.5rem;
 }
 
-.skills__content_info {
-}
-
 .skills__title {
   background: linear-gradient(187deg, #92fe9d 40%, #00c9ff 100%);
   -webkit-background-clip: text;
@@ -70,80 +65,113 @@
   padding: 0.8rem;
 }
 
+.skills__hidden_elements {
+  display: none;
+}
+
 .skills__list_skills {
-  display: grid;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  padding: 0.8rem;
+  padding: 1rem;
 }
 
 .skills__item {
   align-items: center;
-  background: linear-gradient(307deg, #92fe9d 40%, #00c9ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  box-shadow: 9px 6px 0px #161616;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1rem;
+  height: 17rem;
   justify-content: center;
+  width: 90%;
+}
+
+.skills__item > img {
+  object-fit: cover;
+  width: 7rem;
+}
+
+.skills__item > p {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+}
+
+.skills__back_screen {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.skills__item_back {
+  bottom: 0;
+  height: fit-content;
+  position: absolute;
+  width: fit-content;
+  z-index: -1;
 }
 
 .skills__item_back > svg {
   color: #111219;
-  font-size: 6rem;
-  position: absolute;
-  z-index: -1;
+  font-size: 7rem;
+  height: fit-content;
+  width: fit-content;
+}
+
+.skills__item_back:nth-child(1) {
+  right: 0;
+  top: 47%;
 }
 
 .skills__item_back > p {
-  color: #111219;
-  font-size: 2rem;
-  position: absolute;
-  z-index: -1;
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.skills__item_back:nth-child(1) > svg {
-  right: 8%;
-  top: 2%;
-}
-
-.skills__item_back:nth-child(2) > svg {
+.skills__item_back:nth-child(2) {
   left: 8%;
-  top: 25%;
+  top: 24%;
 }
 
-.skills__item_back:nth-child(3) > svg {
-  top: 50%;
-  right: 8%;
+.skills__item_back:nth-child(3) {
+  right: 16%;
+  top: 30%;
 }
 
-.skills__item_back:nth-child(4) > svg {
-  bottom: 10%;
-  left: 8%;
+.skills__item_back:nth-child(4) {
+  bottom: 5%;
+  left: 4%;
 }
 
-.skills__item_back:nth-child(1) > p {
-  right: 11%;
-  top: 37%;
-  transform: rotate(45deg);
+.skills__item_back:nth-child(5) {
+  bottom: 36%;
+  left: 10%;
 }
 
-.skills__item_back:nth-child(2) > p {
-  left: 23%;
-  top: 12%;
-  transform: rotate(342deg);
+.skills__item_back:nth-child(6) {
+  left: 29%;
+  top: 5%;
 }
 
-.skills__item_back:nth-child(3) > p {
-  left: 6%;
-  top: 56%;
-  transform: rotate(310deg);
+.skills__item_back:nth-child(7) {
+  right: 9%;
 }
 
-.skills__item_back:nth-child(4) > p {
-  bottom: 11%;
-  right: 1%;
-  transform: rotate(64deg);
+.skills__item_back:nth-child(8) {
+  right: 0;
+  top: 5%;
+}
+
+.skills__item_back:nth-child(9) {
+  bottom: 17%;
+  left: 48%;
 }
 
 .skills__color_letters {
@@ -161,4 +189,34 @@
 .skills__color_images2 {
   color: #92fe9d !important;
   transition: 3s ease-in all;
+}
+
+.skills__container::before {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }

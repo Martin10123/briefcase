@@ -1,0 +1,210 @@
+.contact__container {
+}
+
+.contact__container::before {
+  background: #000000;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.contact__content {
+  color: #fff;
+}
+
+.contact__nav {
+  align-items: center;
+  border-bottom: 1px solid #92fe9d82;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.contact__nav > svg {
+  cursor: pointer;
+  fill: #92fe9d;
+  font-size: 2rem;
+}
+
+.contact__nav > p {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+}
+
+.contact__welcome,
+.contact__form {
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.contact__welcome > h1 {
+  background: linear-gradient(290deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+}
+
+.contact__list_contacts {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.contact__item {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.contact__item > svg {
+  color: #92fe9d;
+  font-size: 1.8rem;
+}
+
+.contact__item > p {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__content_input {
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid #838383;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 0fr 1fr;
+  height: 3.5rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.contact__input {
+  background: transparent;
+  color: #92fe9d;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.contact__content_input > svg {
+  color: #92fe9d;
+  font-size: 1.4rem;
+}
+
+.contact__content_textarea {
+  height: 22rem;
+  width: 100%;
+}
+
+.contact__textarea {
+  background: transparent;
+  border-radius: 1rem;
+  border: 1px solid #838383;
+  color: #92fe9d;
+  font-size: 1.2rem;
+  height: 100%;
+  outline: none;
+  padding: 0.8rem;
+  resize: none;
+  width: 100%;
+}
+
+.contact__btn {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  border-radius: 0.8rem;
+  border: 1px solid #838383;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
+  height: 3.5rem;
+  transition: 0.6s ease-in;
+  width: 100%;
+}
+
+.contact__content_social_networks {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  justify-content: center;
+  padding: 2rem 0.8rem 0.8rem;
+  width: 100%;
+}
+
+.contact__title {
+  background: linear-gradient(90deg, #92fe9d 40%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+}
+
+.contact__list_social_network {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.8rem 0 0;
+  width: 100%;
+}
+
+.contact__list_social_network > a {
+  color: #838383;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.contact__container::before {
+  -webkit-animation: focus-in-expand-fwd 0.8s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: focus-in-expand-fwd 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+    transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+    transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}

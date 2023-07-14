@@ -1,14 +1,23 @@
 import { BiArrowBack } from "react-icons/bi";
 import { title2 } from "../../../assets";
+import { useReturnPage } from "../../hook/useReturnPage";
+import { motion } from "framer-motion";
 
 import styles from "./aboutMePage.module.css";
 
 export const AboutMePage = () => {
+  const { onReturnPage } = useReturnPage();
+
   return (
-    <section className={styles.about__container}>
+    <motion.section
+      className={styles.about__container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className={styles.about__content}>
         <div className={styles.about__nav}>
-          <BiArrowBack />
+          <BiArrowBack onClick={onReturnPage} />
           <p>About me</p>
         </div>
 
@@ -48,6 +57,6 @@ export const AboutMePage = () => {
           <div className={styles.about__line_grandient2}></div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
